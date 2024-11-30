@@ -1,0 +1,6 @@
+**/build
+**/script
+**/node_modules
+**/.env
+.trace
+.coverage_map.mvcov

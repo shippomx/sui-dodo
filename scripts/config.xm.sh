@@ -1,0 +1,63 @@
+# Addresses
+admin="0xfc735598ccc179e3788f6f2a73dcaa0be1b2d5ca18f3840eeff32345db9d0ca9"
+maintainer="0x8386cdb669eb612a8c9ee7d8569d86e10fe3d71a306754e4c86d419e53c919f9"
+pool_admin="0x9dafd618adfffdc39b1de1533fc342b91d382198d566db44b61c743436845991"
+liquidity_provider1="0xec8a58c486e584d96f191b84ef334ec56dad975452b75a31382a74efaf1e4f62"
+liquidity_provider2="0x65793fc34d6abf45aea73b0ec0c40cf6236ea8fd8274df884fef40dab69bc48c"
+trader1="0x5c4f18b20d989ecb190b1aeb8db4c4eba143f6fb5aaac8a00a32aac9fe5dfeb5"
+trader2="0x2cab0fa8712966faccbd98fe82ab1c06dbcd16173bd2015ccaa0133c89910caf"
+
+# Pool
+contract="0x3f2d1909a246c3bccff3b1e3dad5adad2112a221c45958dda21ab67e7ff03ffc"
+pool_id="0x9f988e65d12ee25ae0b88a2f044fb6b4671223ed12ef7da26f36348fcda8759d"
+upgrade_cap_id="0x2c9f327a9a79e172beacd50855ea629acdc0bbd00b70c7124c23f664024af420"
+
+lp_fee_rate="2000000"
+protocol_fee_rate="1000000"
+k="100000000"
+
+# Capablity
+admin_cap_id="0xa45cf8083aecaaee4eea7f8184061835a607f80a5a8a080a4b5a826992142532"
+pool_admin_cap_id="0x8836f14b36bdc49173abdbfb8232b3deb7fad756536f997222a6f75a522fa151"
+liquidity_operator1_cap_id="0x138e2497100830db57107a206d3cabf461bda8692f8f4e360f3b0a14ce97fe94"
+liquidity_operator2_cap_id="0xa76860607ebb911b8a50ac69c6a63d657f8b385d79fd95656cee0cffc17ed2a2"
+
+# Pyth beta
+sui_price_id="0x50c67b3fd225db8912a424dd4baed60ffdde625ed2feaaf283724f9608fea266"
+sui_usdc_price_info_obj_id="0x1ebb295c789cc42b3b2a1606482cd1c7124076a0f5676718501fda8c7fd075a0"
+
+
+# Base Coin
+base_coin_id="0x6472974eb5ce28e76256bce0b5d0b9645d2e09164cb151bfe760a9e619fc1847"
+base_coin_type="0x0000000000000000000000000000000000000000000000000000000000000002::sui::SUI"
+base_coin_decimals=9
+
+# Quote Coin
+quote_coin_id="0x6472974eb5ce28e76256bce0b5d0b9645d2e09164cb151bfe760a9e619fc1847"
+quote_coin_type="0x6472974eb5ce28e76256bce0b5d0b9645d2e09164cb151bfe760a9e619fc1847::faucetcoin::FAUCETCOIN"
+quote_coin_treasury_cap_id="0x8f024a8f7b75324355bf0a1836ee02bf11bc6f80ae2cd88d1d550513a8aca2b0"
+quote_coin_mint_module="faucetcoin"
+quote_coin_mint_func="mint_to_anyone"
+quote_coin_decimals=6
+
+
+# Clock
+clock_id="0x6"
+
+# Assets
+liquidity_provider1_base_coin_id="0x458fef3ac8dc37032cb2d3ea2af3b984330d02fd8949e3e2b4bf451feb33a355"
+liquidity_provider1_quote_coin_id="0xb8c4a34e01bd835ed45f4d5c08d585d93fc23300a2b5e0f3e90eafe64467db20"
+liquidity_provider2_quote_coin_id="0x39755800444361f3e82a0994131ab177356748e8d1cb306dfec504694f99a785"
+trader1_base_coin_id="0x4d28774cde7ec2ad6becc2e9b4ce4dc665c567aa4572a910a97a2b60cbc36e2e"
+trader1_quote_coin_id="0x0c580e7015a86bb1a59d2d3509bd0decc40a95433b80713b1830f9b6c98575aa"
+
+
+one=1e9
+
+# 定义函数
+format_uint_func() {
+    local input=$1  # amount
+    local decimal=$2  # decimal
+    local result=$(echo "$input * 10 ^ $decimal" | bc -l | awk '{print int($1)}')
+    echo $result
+}
